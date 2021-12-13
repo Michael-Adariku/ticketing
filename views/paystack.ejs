@@ -1,0 +1,71 @@
+
+<%- include('./partials/navigation') %> 
+
+<section>
+    <!-- <div class="bg-title-sub-page bg-menu-page-02 "> -->
+    <div class="bg-title-sub-page jumbo">
+      <div class="wrap-title-sub-page">
+        <h2 class="title-l">  Paystack</h2>
+        <h2 class="title-s"> Amount :   NGN 2000</h2>
+      </div>
+
+
+
+    <div class="my-row container">
+              <!-- payment datails -->
+      <div class="container ">
+        <div class="card-body mt-4 mb-4">
+         <form class="row g-3" id="form" action="/tickets/purchaseTicket" method="post" >
+           <div class="col-md-12">
+             <input
+               type="email"
+               class="my-form-control"
+               id="email"
+               placeholder="example@gmail.com"
+               required
+             />
+           </div>
+           <div class="col-md-12">
+             <input
+               type="text"
+               class="my-form-control"
+               id="fullName"
+               placeholder="Full name"
+               required
+             />
+           </div>
+           <div class="col-12">
+             <button type="submit" class="my-btn" style="display: block; width: 100%;">
+             Make Payment
+             </button>
+           </div>
+         </form>
+       </div>
+      </div>
+      <!-- payment paragraph -->
+      <div class="container " >
+        <div class="card-body mt-4 mb-4">
+         <p>
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla reprehenderit quia, esse perferendis, nihil magni ipsa modi non voluptates, blanditiis est possimus quaerat ducimus doloribus officia asperiores commodi quod nisi?
+         </p>
+       </div>
+      </div>
+    </div>
+     
+       <div class="wrap-title-sub-page">
+      
+        <h2 class="title-s"> please enter a valid email and full Name before clicking the "make payment" button  ...</h2>
+        <p>
+          After payment is made, you will recieve an email (that which payment was made with) containing your 
+          Registration number (REG NUMBER)...
+       </p>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+
+  
+<%- include('./partials/footer') %> 
