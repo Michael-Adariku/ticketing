@@ -4,111 +4,109 @@
   <!-- <div class="bg-title-sub-page bg-menu-page-02 "> -->
   <div class="bg-title-sub-page jumbo">
     <div class="wrap-title-sub-page">
-      <h2 class="title-l">Register</h2>
-      <!-- <h6 class="title-s">Home Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam atque hic fugiat laboriosam,</h6> -->
-    </div>
-  </div>
-</section>
-
-<div class="register">
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-8">
-        <div class="card mt-4 mb-4">
-          <div class="card-body mt-4 mb-4">
-            <form class="row g-3" action="/contest/register" method="post">
-              <div class="col-md-6">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail4"
-                  placeholder="email"
-                />
-              </div>
-
-              <div class="col-md-6">
-                <input
-                  type="number"
-                  class="form-control"
-                  id=""
-                  placeholder="Phone number"
-                />
-              </div>
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id=""
-                  placeholder="First name"
-                />
-              </div>
-
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  id=""
-                  placeholder="Last name"
-                />
-              </div>
-
-              <div class="col-12">
-                <input
-                  type="text"
-                  class="form-control"
-                  id=""
-                  placeholder="Stage name"
-                />
-              </div>
-
-              <div class="col-md-12">
-                <select id="inputState" class="form-select">
-                  <option selected>Category</option>
-                  <option>Dancing</option>
-                  <option>Singing</option>
-                  <option>Rap and Poetry</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
-                <select  class="form-select" name="slct1" id="slct1"  onchange="populate(this.id, 'slct2')">
-                  <option value="" selected>Choose State</option>
-                  <option value="Abuja">Abuja</option>
-                  <option value="Akwa Ibom">Akwa Ibom</option>
-                  <option value="Cross River">Cross River</option>
-                  <option value="Lagos">Lagos</option>
-                  <option value="Port Harcourt">Port Harcourt</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
-                <select name="slct2" id="slct2" class="form-select">
-                </select>
-              </div>
-
-              <div class="col-12">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id="gridCheck"
-                  />
-                  <label class="form-check-label" for="gridCheck">
-                    Agree with terms and conditions
-                  </label>
+      <!-- <h2 class="title-l">Register</h2> -->
+      
+      <div class="register">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-6">
+              <div class=", mt-4 mb-4 my-form-control">
+                <div class="card-body mt-4 mb-4">
+      
+                  <form class="row g-3" action="/contest/register" method="POST">
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="my-form-control"
+                        id="inputEmail"
+                        name="email"
+                        placeholder="email"
+                      />
+                    </div>
+      
+                    <div class="col-md-6">
+                      <input
+                        type="number"
+                        class="my-form-control"
+                        id="registerPhone"
+                        name="registerPhone"
+                        placeholder="Phone number"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="my-form-control"
+                        id="registerFirstName"
+                        name="registerFirstName"
+                        placeholder="First name"
+                      />
+                    </div>
+      
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="my-form-control"
+                        id="registerLastName"
+                        name="registerLastName"
+                        placeholder="Last name"
+                      />
+                    </div>
+      
+                    <div class="col-md-12">
+                      <select id="inputState" name="registerCategorySelect" class="my-form-control ">
+                        <option selected>Category</option>
+                        <option>Dancing</option>
+                        <option>Singing</option>
+                        <option>Rap and Poetry</option>
+                      </select>
+                    </div>
+      
+                    <div class="col-md-6">
+                      <select  class="my-form-control" name="registerSelectState" id="slct1"  onchange="populate(this.id, 'slct2')">
+                        <option value="" selected>Choose State</option>
+                        <option value="Abuja">Abuja</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Port Harcourt">Port Harcourt</option>
+                      </select>
+                    </div>
+      
+                    <div class="col-md-6">
+                      <select name="registerSelectLga" id="slct2" class="my-form-control">
+                      </select>
+                    </div>
+      
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          name="registerAgreementCheckBox"
+                          id="gridCheck"
+                        />
+                        <label class="form-check-label" for="gridCheck">
+                          Agree with terms and conditions
+                        </label>
+                      </div>
+                    </div>
+      
+                    <div class="col-12">
+                      <button type="submit" class="my-btn">
+                        Register
+                      </button>
+                    </div>
+                  </form>
+                  
                 </div>
               </div>
-
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary dblock">
-                  Sign in
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
 <%- include('./partials/footer') %>

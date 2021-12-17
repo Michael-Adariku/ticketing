@@ -3,12 +3,19 @@ const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+// database
 const mysql = require('mysql');
+require('./controller/database');
 
 const pageRouter = require('./routes/index');
 const fullPageRouter = require('./routes/fullPages.router')
 const paymentMethod = require('./routes/paymentHandler')
-const ticketVendor = require('./routes/ticketVendor')
+const ticketVendor = require('./routes/ticketVendor');
+const registrationHandler = require('./routes/userAuth');
+const profileHandler = require('./routes/profile.route');
+const myLogger = require('./controller/profle.middlware');
+
 
 
 // EJS
@@ -17,7 +24,16 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 
+// Express body parser
+
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
+// profile handler middleware
+app.use(myLogger)
+
 app.use(express.static(path.join(__dirname, './', 'public')));
+
 
 
 app.use('/', pageRouter);
@@ -27,7 +43,10 @@ app.use('/full-post', fullPageRouter);
 // payment handlers
 // app.use('/payment', paymentMethod)
 
-app.use('/tickets', ticketVendor)
+app.use('/tickets', ticketVendor);
+// registration handler
+app.use('/contest', registrationHandler);
+app.use('/profile', myLogger, profileHandler);
 
 const PORT = 2020;
 

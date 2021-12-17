@@ -51,26 +51,34 @@ router.get('/register', (req, res) => {
     title: 'Register'
   })
 });
-router.get('/makePayment', (req, res) => {
+
+// payment service
+router.get('/getRegNumber', (req, res) => {
+  res.status(200).render('getRegNumberForm', {
+    title: 'purchase Reg Number'
+  })
+});
+router.get('/makePaymentTickets', (req, res) => {
   res.status(200).render('make-payment', {
     title: 'Make payment'
   })
 });
 
-
-
-router.get('/paystackPayment', (req, res) => {
+router.get('/ForGetTickets', (req, res) => {
   
-  res.status(200).render('paystack', {
-  title: 'Homepage' 
+  res.status(200).render('purchaseTicketsForm', {
+    title: 'paystack' 
+  })
 })
-})
+// payment service ends here
 
-router.get('/paypalPayment', (req, res) => {
-  res.send('paypal...');
-//   res.status(200).render('index', {
-  // title: 'Homepage'
+router.get('/not-found', (req, res) => {
+
+  res.status(200).render('not-available', {
+  title: '404 not found'
 })
+});
+
 router.get('/masterCard', (req, res) => {
   res.send('masterCard...');
 //   res.status(200).render('index', {
