@@ -13,7 +13,7 @@ const fullPageRouter = require('./routes/fullPages.router')
 const paymentMethod = require('./routes/paymentHandler')
 const ticketVendor = require('./routes/ticketVendor');
 const registrationHandler = require('./routes/userAuth');
-const profileHandler = require('./routes/profile.route');
+
 const myLogger = require('./controller/profle.middlware');
 
 
@@ -46,7 +46,7 @@ app.use('/full-post', fullPageRouter);
 app.use('/tickets', ticketVendor);
 // registration handler
 app.use('/contest', registrationHandler);
-app.use('/profile', myLogger, profileHandler);
+
 
 const PORT = 2020;
 

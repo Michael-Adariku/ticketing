@@ -34,6 +34,15 @@ router.get('/faq', (req, res) => {
 });
 
 
+// contestants
+
+router.get('/profile1', (req, res) => {
+  res.render('contestant01', {
+      message: 'contestant number one'
+  })
+  // res.send("this is the profile page of 1")
+})
+
 
 router.get('/contact', (req, res) => {
   res.status(200).render('contact-us', {
