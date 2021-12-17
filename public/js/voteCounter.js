@@ -1,7 +1,6 @@
 let button = document.getElementById('checkPrice');
 let phoneNumber = document.getElementById('phoneNumber');
 
-console.log("hi")
 
 
 button.addEventListener('click', amountUpdator);

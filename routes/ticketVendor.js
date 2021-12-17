@@ -6,14 +6,14 @@ const mysql = require('mysql');
 const { response } = require('express');
 
 const dataBase = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'Astro_database'
-  });
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password:process.env.DB_PASSWORD,
+  database:process.env.DB_NAME
+});
 
   
-let secret = "sk_test_992c32af4d5b3451a71a759c36390acd1b0c35cd"
+  let secret = process.env.PAYSTACK_SECRET_KEY;
 
 var paystack = require("paystack-api")(secret);
 

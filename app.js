@@ -8,12 +8,18 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 require('./controller/database');
 
+require('dotenv').config();
+
 const pageRouter = require('./routes/index');
+// to handle blog and blog posts
 const fullPageRouter = require('./routes/fullPages.router')
+// payment processing
 const paymentMethod = require('./routes/paymentHandler')
 const ticketVendor = require('./routes/ticketVendor');
+// login and registration handler
 const registrationHandler = require('./routes/userAuth');
 
+// custom middleware
 const myLogger = require('./controller/profle.middlware');
 
 

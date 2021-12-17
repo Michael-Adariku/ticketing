@@ -13,7 +13,8 @@ const dataBase = mysql.createConnection({
   });
 
   
-let secret = "sk_test_992c32af4d5b3451a71a759c36390acd1b0c35cd"
+// let secret = "sk_test_992c32af4d5b3451a71a759c36390acd1b0c35cd"
+let secret = process.env.PAYSTACK_SECRET_KEY;
 
 var paystack = require("paystack-api")(secret);
 
