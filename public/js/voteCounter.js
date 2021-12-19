@@ -1,7 +1,6 @@
 let button = document.getElementById('checkPrice');
-let phoneNumber = document.getElementById('phoneNumber');
 
-console.log("hi")
+
 
 
 button.addEventListener('click', amountUpdator);
@@ -9,9 +8,9 @@ button.addEventListener('click', amountUpdator);
 function amountUpdator () {
     
     let voteNumber = document.getElementById('numberOfVotes').value.trim();
-    let updatePrice = voteNumber * 100;
+    let updatedPrice = voteNumber * 50;
     
-    document.getElementById("price-tag").innerHTML = updatePrice;
+    document.getElementById("price-tag").innerHTML = updatedPrice;
     
 
     
