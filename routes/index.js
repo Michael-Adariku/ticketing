@@ -52,6 +52,9 @@ router.get('/register', (req, res) => {
   })
 });
 
+
+
+
 // payment service
 router.get('/getRegNumber', (req, res) => {
   res.status(200).render('getRegNumberForm', {
@@ -80,54 +83,10 @@ router.get('/not-found', (req, res) => {
 });
 
 
-// contestants
 
 router.get('/profile1', (req, res) => {
   res.render('contestant01', {
       message: 'contestant number one'
   })
 })
-
-router.get('/profile2', (req, res) => {
-  res.render('contestant02', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile3', (req, res) => {
-  res.render('contestant03', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile4', (req, res) => {
-  res.render('contestant04', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile5', (req, res) => {
-  res.render('contestant05', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile6', (req, res) => {
-  res.render('contestant06', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile7', (req, res) => {
-  res.render('contestant07', {
-      message: 'contestant number one'
-  })
-})
-
-router.get('/profile8', (req, res) => {
-  res.render('contestant08', {
-      message: 'contestant number one'
-  })
-})
-
 module.exports = router;
