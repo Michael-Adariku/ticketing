@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-
+const passport = require('passport');
 
 const dataBase = mysql.createConnection({
     host: 'localhost',
@@ -71,43 +71,54 @@ router.post('/register', (req, res) => {
 });
 
 
-// // Login
-// router.post('/login', (req, res, next) => {
+//  Login
+router.post('/login', (req, res, next) => {
 
-//   try {
-//     const { email, password } = req.body;
-//     if (!email || !password) {
-//         return res.status(400).render('signIn', {
-//             message: 'Please provide an email and password'
-//         })
-//     }
-//     // To check user login information
-//     dataBase.query('SELECT * FROM u WHERE email = ?', [email], async(error, results) => {
-//         console.log(results);
-//         // if !results || !password
-//         if (results.length <= 0) {
-//           console.log('email no dey...')
-//             return res.status(401).render('signIn', {
-//                 message: 'Email is incorrect'
-//             });
-//         } else if (!(await bcrypt.compare(password, results[0].password))) {
-//           console.log('password do not match..')
-//             return res.status(401).render('signIn', {
-//                 message: 'Password is incorrect'
-//             });
-//         } else {
-//             // res.send('Welcome to your login page');
-//             res.status(200).render('welcome', {
-//                 message: 'Welcome to your dashbord page'
-//             })
-//         }
-//     })
-// } catch (error) {
-//     console.log(error);
-// }
-// });
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).render('signIn', {
+            message: 'Please provide an email and password'
+        })
+    }
+    // To check user login information
+    dataBase.query('SELECT * FROM u WHERE email = ?', [email], async(error, results) => {
+        console.log(results);
+        // if !results || !password
+        if (results.length <= 0) {
+          console.log('email no dey...')
+            return res.status(401).render('signIn', {
+                message: 'Email is incorrect'
+            });
+        } else if (!(await bcrypt.compare(password, results[0].password))) {
+          console.log('password do not match..')
+            return res.status(401).render('signIn', {
+                message: 'Password is incorrect'
+            });
+        } else {
+            // res.send('Welcome to your login page');
+            res.status(200).render('welcome', {
+                message: 'Welcome to your dashbord page'
+            })
+        }
+    })
+} catch (error) {
+    console.log(error);
+}
+});
 
-// // Logout
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+  
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function (err, user) {
+      done(err, user);
+    });
+  });
+
+
+// Logout
 // router.get('/logout', (req, res) => {
 //   req.logout();
 //   req.flash('success_msg', 'You are logged out');

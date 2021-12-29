@@ -1,0 +1,63 @@
+<%- include('../partials/navigation') %>
+
+<section>
+  <!-- <div class="bg-title-sub-page bg-menu-page-02 "> -->
+  <div class="bg-title-sub-page jumbo">
+    <!-- <div class="wrap-title-sub-page">
+      <h2 class="title-l">Vote</h2>
+    </div> -->
+
+    <div class="container">
+      <div class="my-row">
+        <!-- contestant picture -->
+        <div class="container">
+          <div class="card-body mt-4 mb-4">
+            <div class="hover-img">
+              <%- include('../contestant-imgs/image010') %>
+            </div>
+          </div>
+        </div>
+        <!-- payment area -->
+        <div class="container">
+          <div class="card-body mt-4 mb-4">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+              reprehenderit quia, esse perferendis, nihil magni ipsa modi non
+              voluptates, blanditiis est possimus quaerat ducimus doloribus
+              officia asperiores commodi quod nisi?
+            </p>
+            <h6 class="title-s">Name : Adariku Michael</h6>
+            <!-- payment/ votes button -->
+
+            <div class="row">
+              <%- include('../partials/check-price-form') %>
+              
+              <form id="buyVoteForm">
+                <div class="col-md-12 mt-4">
+                  <input
+                    type="text"
+                    class="my-form-control"
+                    placeholder="email"
+                    id="voterEmail"
+                  />
+                </div>
+
+                <!-- button for payment -->
+                <div class="col-12">
+                  <button
+                    type="submit"
+                    id="vote"
+                    class="my-btn"
+                    style="width: 100%"
+                  >
+                    Pay NGN <span id="price-tag"></span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

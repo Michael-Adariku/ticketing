@@ -18,6 +18,9 @@ const profileHandler = require('./routes/profile.route');
 const myLogger = require('./controller/profle.middlware');
 
 
+// with express session
+const session = require('express-session'); 
+const passport = require('passport');
 
 // EJS
 app.use(expressLayouts);
@@ -25,8 +28,20 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 
-// Express body parser
 
+// Authentication
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+    // cookie: { secure: true }
+  }));
+// passport initialising
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Express body parser
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
@@ -38,15 +53,17 @@ app.use(express.static(path.join(__dirname, './', 'public')));
 
 
 app.use('/', pageRouter);
+
 // blog handler
 app.use('/full-post', fullPageRouter);
 
-// payment handlers
+app.use('/profile', myLogger, profileHandler);
 
-app.use('/tickets', ticketVendor);
 // registration handler
 app.use('/contest', registrationHandler);
-app.use('/profile', myLogger, profileHandler);
+
+// payment handlers
+app.use('/tickets', ticketVendor);
 
 const PORT = process.env.PORT ;
 

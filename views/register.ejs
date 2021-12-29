@@ -1,112 +1,152 @@
 <%- include('./partials/navigation') %>
 
+
+
+
+
 <section>
   <!-- <div class="bg-title-sub-page bg-menu-page-02 "> -->
   <div class="bg-title-sub-page jumbo">
     <div class="wrap-title-sub-page">
-      <!-- <h2 class="title-l">Register</h2> -->
+      <!-- <h2 class="title-l">  Paystack</h2> -->
+      <!-- <h2 class="title-s">Enter the form below</h2> -->
+    </div>
+
+
+
+  <div class="my-grid container">
+       <!-- payment paragraph -->
+       <div class="container">
+        <div class="card-body mt-4 mb-4">
+          <h2 class="title-l">Welcome to Breed</h2>
+         <p>
+          Make sure to enter the appropiate fields in the form provided. A confirmation message will be sent 
+          to the email for verification. Note that only verified email addresses will be published, and will be 
+          eligible to participate in the current events.
+         </p>
+         <div class="home-btn mt-4">
+          <a href="/login" class="my-btn">log in</a>
+         </div>
+       </div>
+       
+      </div>
+            <!-- payment datails -->
+    <div class="container ">
+      <div class="card-body mt-4 mb-4 form-control">
       
-      <div class="register">
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div class="col-md-6">
-              <div class=", mt-4 mb-4 my-form-control">
-                <div class="card-body mt-4 mb-4">
-      
-                  <form class="row g-3" action="/contest/register" method="POST">
-                    <div class="col-md-6">
-                      <input
-                        type="email"
-                        class="my-form-control"
-                        id="inputEmail"
-                        name="email"
-                        placeholder="email"
-                      />
-                    </div>
-      
-                    <div class="col-md-6">
-                      <input
-                        type="number"
-                        class="my-form-control"
-                        id="registerPhone"
-                        name="registerPhone"
-                        placeholder="Phone number"
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="my-form-control"
-                        id="registerFirstName"
-                        name="registerFirstName"
-                        placeholder="First name"
-                      />
-                    </div>
-      
-                    <div class="col-md-6">
-                      <input
-                        type="text"
-                        class="my-form-control"
-                        id="registerLastName"
-                        name="registerLastName"
-                        placeholder="Last name"
-                      />
-                    </div>
-      
-                    <div class="col-md-12">
-                      <select id="inputState" name="registerCategorySelect" class="my-form-control ">
-                        <option selected>Category</option>
-                        <option>Dancing</option>
-                        <option>Singing</option>
-                        <option>Rap and Poetry</option>
-                      </select>
-                    </div>
-      
-                    <div class="col-md-6">
-                      <select  class="my-form-control" name="registerSelectState" id="slct1"  onchange="populate(this.id, 'slct2')">
-                        <option value="" selected>Choose State</option>
-                        <option value="Abuja">Abuja</option>
-                        <option value="Akwa Ibom">Akwa Ibom</option>
-                        <option value="Cross River">Cross River</option>
-                        <option value="Lagos">Lagos</option>
-                        <option value="Port Harcourt">Port Harcourt</option>
-                      </select>
-                    </div>
-      
-                    <div class="col-md-6">
-                      <select name="registerSelectLga" id="slct2" class="my-form-control">
-                      </select>
-                    </div>
-      
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="registerAgreementCheckBox"
-                          id="gridCheck"
-                        />
-                        <label class="form-check-label" for="gridCheck">
-                          Agree with terms and conditions
-                        </label>
-                      </div>
-                    </div>
-      
-                    <div class="col-12">
-                      <button type="submit" class="my-btn">
-                        Register
-                      </button>
-                    </div>
-                  </form>
-                  
-                </div>
-              </div>
+        <form class="row g-3" action="/contest/register" method="POST">
+          <div class="col-md-6">
+            <input
+              type="email"
+              class="my-form-control"
+              id="inputEmail"
+              name="email"
+              placeholder="email"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <input
+              type="number"
+              class="my-form-control"
+              id="registerPhone"
+              name="registerPhone"
+              placeholder="Phone number"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="my-form-control"
+              id="registerFirstName"
+              name="registerFirstName"
+              placeholder="First name"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="my-form-control"
+              id="registerLastName"
+              name="registerLastName"
+              placeholder="Last name"
+            />
+          </div>
+
+          <div class="col-md-12">
+            <select id="inputState" name="registerCategorySelect" class="my-form-control">
+              <option selected>Category</option>
+              <option>Dancing</option>
+              <option>Singing</option>
+              <option>Rap and Poetry</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <select  class="my-form-control" name="registerSelectState" id="slct1"  onchange="populate(this.id, 'slct2')">
+              <option value="" selected>Choose State</option>
+              <option value="Abuja">Abuja</option>
+              <option value="Akwa Ibom">Akwa Ibom</option>
+              <option value="Cross River">Cross River</option>
+              <option value="Lagos">Lagos</option>
+              <option value="Port Harcourt">Port Harcourt</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <select name="registerSelectLga" id="slct2" class="my-form-control">
+            </select>
+          </div>
+
+
+          <div class="col-md-6">
+            <input
+              type="password"
+              class="my-form-control"
+              id="registerLastName"
+              name="registerLastName"
+              placeholder="Enter Your password"
+            />
+          </div>
+
+          <div class="col-md-6">
+            <input
+              type="password"
+              class="my-form-control"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm password"
+            />
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="registerAgreementCheckBox"
+                id="gridCheck"
+              />
+              <label class="form-check-label" for="gridCheck">
+                Agree with terms and conditions
+              </label>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div class="col-12">
+            <button type="submit" class="my-btn2" style="width: 100%;">
+              Register
+            </button>
+          </div>
+        </form>
+     </div>
     </div>
+ 
+  </div>
+   
+
+
   </div>
 </section>
-
 

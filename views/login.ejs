@@ -1,0 +1,71 @@
+<%- include('./partials/navigation') %>
+
+
+
+
+
+<section>
+  <!-- <div class="bg-title-sub-page bg-menu-page-02 "> -->
+  <div class="bg-title-sub-page jumbo">
+    <div class="wrap-title-sub-page">
+      <!-- <h2 class="title-l">  Paystack</h2> -->
+      <h2 class="title-s">Login</h2>
+    </div>
+
+
+
+  <div class="my-row container">
+       <!-- payment paragraph -->
+       <div class="container " >
+        <div class="card-body mt-4 mb-4">
+          <h2 class="title-l">Welcome to Breed</h2>
+         <p>
+          Make sure to enter the appropiate fields in the form provided. A confirmation message will be sent 
+          to the email for verification. Note that only verified email addresses will be published, and will be 
+          eligible to participate in the current events.
+         </p>
+         <div class="home-btn mt-4">
+          <a href="/register" class="my-btn">Register</a>
+         </div>
+       </div>
+      </div>
+            <!-- payment datails -->
+    <div class="container ">
+      <div class="card-body mt-4 mb-4">
+      
+        <form class="row g-3" action="/contest/login" method="POST">
+          <div class="col-md-12">
+            <input
+              type="email"
+              class="my-form-control2"
+              id="inputEmail"
+              name="email"
+              placeholder="email"
+            />
+          </div>
+          <div class="col-md-12">
+            <input
+              type="password"
+              class="my-form-control2"
+              id="password"
+              name="password"
+              placeholder="password"
+            />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="my-btn" style="width: 100%;">
+              Register
+            </button>
+          </div>
+        </form>
+     </div>
+    </div>
+ 
+  </div>
+   
+
+
+  </div>
+</section>
+

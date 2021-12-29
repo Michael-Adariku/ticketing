@@ -1,0 +1,224 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Poppins:wght@200&family=Roboto:wght@300&display=swap");
+
+.btn-find-table {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  line-height: 46px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+
+  background-color: #000033;
+  color: white;
+  border: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn-find-table:hover {
+  cursor: pointer;
+  background-color: #00003380;
+}
+.my-btn {
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #f3f3f3;
+  padding: 10px 45px;
+  margin: 0px 10px 10px 0;
+  color: #ffff;
+  background-color: transparent;
+}
+
+.my-btn:hover {
+  transition: 0.1s ease-in;
+  background: #fff;
+  text-decoration: none;
+  color: #000033;
+}
+.my-btn:active {
+  transform: scale(0.98);
+}
+.my-btn2 {
+  background-color: var(--dark);
+  border: none;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px 45px;
+  text-decoration: none;
+}
+
+.my-grid {
+  display: grid;
+  grid-template-columns: 600px auto ;
+}
+/* root style */
+:root {
+  --light: #f8f9fa;
+  --secondary: #abd5bd;
+  --dark: #343a40;
+  --primary-color: #f15bb5;
+  --secondary-color: #2ec4b6;
+  --border: #e9ecef;
+}
+
+.my-text-light {
+  color: var(--light);
+}
+.text-secondar {
+  color: var(--secondary);
+}
+.my-text-dark {
+  color: var(--dark);
+}
+.my-text-primary {
+  color: var(--primary-color);
+}
+.bg-light {
+  background-color: var(--light);
+}
+/* section styling */
+
+/* navigation menu stlye */
+.my-navbar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.my-navbar-nav {
+  margin: 10px;
+}
+
+.nav-bg {
+  /* background-color: #000033; */
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding: 20px;
+}
+
+.wrap_header {
+  margin: 0 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+*/ .my-nav-brand {
+  font-family: "DM sans", sans-serif;
+  font-weight: bold;
+  align-self: center;
+  font-size: 32px;
+}
+
+.my-collapse {
+  align-self: center;
+}
+.my-nav-link {
+  font-size: 14px;
+  margin-right: 15px;
+  color: var(--light);
+
+  text-decoration: none;
+}
+.my-nav-link:hover {
+  color: var(--primary-color);
+}
+
+.icon-header a {
+  color: #c6c6c6;
+  padding: 5px;
+}
+
+.icon-header a:hover {
+  color: var(--primary-color);
+}
+
+.search-box {
+  display: inline;
+  border-right: 1px solid var(--secondary);
+  padding-right: 12px;
+  margin-right: 10px;
+}
+/* ..navigation menu stlye */
+
+.my-toggle-button {
+  color: #f8f9fa;
+  font-size: 21px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  margin: 8px 10px;
+  display: none;
+}
+.my-toggle-button:focus {
+  outline: none;
+}
+
+.my-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.jumbo {
+  /* background-color: #000033; */
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 992px) {
+  .wrap_header {
+    flex-direction: column;
+  }
+  .my-brand-logo {
+    margin-bottom: 10px;
+  }
+  .my-navbar-nav {
+    margin-bottom: 10px;
+  }
+
+  .home-btn {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 574px) {
+  .my-toggle-button {
+    display: initial;
+    margin-right: 30px;
+  }
+  .my-collapse .my-nav-link {
+    display: block;
+    text-align: center;
+  }
+  .search-box {
+    border-right: none;
+  }
+  .my-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(1, 0.03, 0, 0.94);
+  }
+
+  .my-collapse-toggle {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-btn {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
