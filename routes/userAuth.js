@@ -5,66 +5,67 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 const passport = require('passport');
 
-const dataBase = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'Astro_database'
-});
+const dataBase = require('../controller/dbConnector');
 
 // Register
 router.post('/register', (req, res) => {
 
     const {
-        registerPhone,
+        // password,
+        // confirmPassword,
+        // registerPhone,
         email,
         registerFirstName,
         registerLastName,
-        registerCategorySelect,
+        // registerCategorySelect,
         registerSelectState,
         registerSelectLga,
         registerAgreementCheckBox
     } = req.body;
 
-    console.log(req.body);
+    console.log(`this is req body: ${req.body}`);
 
-    dataBase.query('SELECT email FROM contestants WHERE email = ?', [email], async (error, results) => {
-        console.log('this is in the query section')
+    dataBase.query('SELECT email FROM BreedA WHERE email = ?', [email], async (error, results) => {
+        console.log('this is in the query select section')
         if (error) {
             console.log(error);
         }
 
-        // if (results.length > 0) {
+        if (results.length > 0) {
+            console.log(results.length);
         //     return res.render('register', {
         //         message: "that email is already in use"
-        //     })
-        // }
-        // if (results.length < 0) {
-        //     console.log('email is no used...');
-        // }
+            // })
+        }
+
+        if (results.length < 0) {
+            console.log("email has not been taken...")
+        }
+        
 
         if(registerAgreementCheckBox == null) {
           return  console.log('please agree with terms')
         }
 
-        dataBase.query('INSERT INTO contestants SET ?', {
+        dataBase.query('INSERT INTO BreedA SET ?', {
             email:email,
-            firstname: registerFirstName,
-            lastname: registerLastName,
-            category: registerCategorySelect,
-            State: registerSelectState,
-            LGA: registerSelectLga,
-            phone: registerPhone
+            firstName: registerFirstName,
+            lastName: registerLastName,
+            // password: password,
+            // category: registerCategorySelect,
+            state: registerSelectState,
+            lga: registerSelectLga,
+            // phone: registerPhone,
         }, (error, results) => {
             if (error) {
                 console.log(error)
             } else {
-                console.log(results)
-                res.redirect('make-payment'
-                // , {
-                    // message: ' you can now log in'
-                // }
-                )
+                const user_Id = results[0];
+              console.log(`this is the user id &{user_Id}`)
+                req.login(user_Id, function(err){
+                    res.redirect('/');
+                })
+
             }
         })
     });
@@ -108,13 +109,11 @@ router.post('/login', (req, res, next) => {
 });
 
 passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user_Id);
   });
   
   passport.deserializeUser(function(id, done) {
-    User.findById(id, function (err, user) {
-      done(err, user);
-    });
+      done(err, user_Id);
   });
 
 
